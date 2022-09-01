@@ -1,10 +1,14 @@
 {
   "name": "passport-roblox",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "Passport strategy for [Roblox](https://roblox.com)",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tovyblox/passport-roblox.git"
   },
   "keywords": [
     "passport",
