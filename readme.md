@@ -6,7 +6,9 @@
  `npm intall passport-roblox`
  
  ### Configure
- This stratergy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope
+ This strategy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope.
+ Client ID, Secret and applicable scopes can be found during creation of a Roblox OAuth2 application on the [Creator Dashboard](https://create.roblox.com/credentials).
+ 
 ```js
 passport.use(new passportroblox({
   clientID: process.env.clientid,
