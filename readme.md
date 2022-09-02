@@ -6,7 +6,7 @@
  `npm intall passport-roblox`
  
  ### Configure
- This stradegy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope
+ This stratergy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope
 ```js
 passport.use(new passportroblox({
   clientID: process.env.clientid,
