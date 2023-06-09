@@ -3,7 +3,7 @@
  Passport strategy for [Roblox](https://roblox.com)
  
  ## Usage
- `npm intall passport-roblox`
+ `npm install passport-roblox`
  
  ### Configure
  This strategy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope.
@@ -14,23 +14,20 @@ passport.use(new passportroblox({
   clientID: process.env.clientid,
   clientSecret: process.env.secret,
   callbackURL: "http://localhost:8080/callback",
-  state: true,
-  scope: 'openid',
-  pkce: true
+  scopes: ["openid"]
 }, function (accessToken, refreshToken, profile, done) {
-  profile.
   done(null, profile)
 }));
 ```
 
-### Authenticiation requests
-Use `passport.authenticate()` and use `roblox` for it
+### Authentication requests
+Use `passport.authenticate()` as middleware on your authentication endpoints with the strategy name `roblox`.
 
 ```js
 app.get("/login", passport.authenticate('roblox'), (req, res, next) => { });
 
 app.get("/callback", passport.authenticate('roblox', { failureRedirect: '/authfail'}), async (req, res) => {
-    res.redirect('/shh')
+    res.redirect('/dashboard')
 })
 ```
  
