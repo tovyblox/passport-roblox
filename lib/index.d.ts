@@ -1,2 +1,2 @@
-export = Strategy;
-import Strategy = require("./strategy");
+import strategy = require("./strategy");
+export = strategy;
