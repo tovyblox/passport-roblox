@@ -14,7 +14,7 @@ passport.use(new passportroblox({
   clientID: process.env.clientid,
   clientSecret: process.env.secret,
   callbackURL: "http://localhost:8080/callback",
-  scopes: ["openid"]
+  scope: ["openid"]
 }, function (accessToken, refreshToken, profile, done) {
   done(null, profile)
 }));
