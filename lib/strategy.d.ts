@@ -2,6 +2,8 @@ import express = require("express");
 import passport = require("passport");
 import oauth2 = require("passport-oauth2");
 
+export interface Profile extends passport.Profile {}
+
 type OAuth2StrategyOptionsWithoutRequiredURLs = Pick<
 	oauth2._StrategyOptionsBase,
 	Exclude<keyof oauth2._StrategyOptionsBase, "authorizationURL" | "tokenURL">
@@ -29,7 +31,7 @@ type VerifyCallback = (err?: string | Error | null, user?: Express.User, info?: 
 type VerifyFunction = (
 	accessToken: string,
 	refreshToken: string,
-	profile: passport.Profile,
+	profile: Profile,
 	done: VerifyCallback
 ) => void;
 
@@ -37,7 +39,7 @@ type VerifyFunctionWithRequest = (
 	req: express.Request,
 	accessToken: string,
 	refreshToken: string,
-	profile: passport.Profile,
+	profile: Profile,
 	done: VerifyCallback
 ) => void;
 
@@ -89,10 +91,7 @@ export class Strategy {
 	 * @param {function} done
 	 * @access protected
 	 */
-	userProfile(
-		accessToken: string,
-		done: (err?: Error | null, profile?: passport.Profile) => void
-	): void;
+	userProfile(accessToken: string, done: (err?: Error | null, profile?: Profile) => void): void;
 
 	/**
 	 * Return extra parameters to be included in the authorization request.
