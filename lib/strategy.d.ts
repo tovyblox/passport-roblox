@@ -51,7 +51,7 @@ type AuthorizationOptions = {
 	prompt: any;
 };
 
-export class Strategy {
+export class Strategy extends oauth2.Strategy {
 	name: string;
 
 	/**
