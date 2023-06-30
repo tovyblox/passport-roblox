@@ -2,7 +2,34 @@ import express = require("express");
 import passport = require("passport");
 import oauth2 = require("passport-oauth2");
 
-export interface Profile extends passport.Profile {}
+export interface Profile extends passport.Profile {
+	/**
+	 * An identifier for the user, unique among all Roblox accounts and
+	 * never reused. Use within your application as the unique-identifier
+	 * key for the user.
+	 *
+	 * Ex: `"121632193"`
+	 */
+	id: string;
+
+	/**
+	 * The UNIX Epoch time that the user's account was created.
+	 *
+	 * Ex: `1460999035`  // Monday, 18 April 2016 17:03:55
+	 */
+	createdAt?: string;
+	profileUrl?: string;
+
+	_raw: string;
+	_json: {
+		sub: string;
+		name?: string;
+		nickname?: string;
+		preferred_username?: string;
+		created_at?: number;
+		profile?: string;
+	};
+}
 
 type OAuth2StrategyOptionsWithoutRequiredURLs = Pick<
 	oauth2._StrategyOptionsBase,
