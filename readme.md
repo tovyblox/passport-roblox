@@ -24,7 +24,7 @@ passport.use(new passportroblox({
 Use `passport.authenticate()` as middleware on your authentication endpoints with the strategy name `roblox`.
 
 ```js
-app.get("/login", passport.authenticate('roblox'), (req, res, next) => { });
+app.get("/login", passport.authenticate('roblox'));
 
 app.get("/callback", passport.authenticate('roblox', { failureRedirect: '/authfail'}), async (req, res) => {
     res.redirect('/dashboard')
