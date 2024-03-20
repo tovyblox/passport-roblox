@@ -3,7 +3,7 @@
  Passport strategy for [Roblox](https://roblox.com)
  
  ## Usage
- `npm intall passport-roblox`
+ `npm install passport-roblox`
  
  ### Configure
  This strategy uses the Roblox profile scope. The configuration requires clientID, clientSecret, a callback URL, and a scope.
